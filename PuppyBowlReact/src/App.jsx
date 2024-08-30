@@ -7,8 +7,7 @@ import SinglePlayer from './components/SinglePlayer.jsx'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  
   return (
     <>
 <div id="main-section">
