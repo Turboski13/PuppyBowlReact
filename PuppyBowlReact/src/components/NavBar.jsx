@@ -1,11 +1,10 @@
-import { Routes, Route, Link } from "react-router-dom";
-import NavBar from './components/NavBar.jsx'
-
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
     return (
       <div id="container">
       <div id="navbar"> 
+      <Link to="/">Home</Link>
       <Link to="/AllPlayers">All Players</Link>
       <Link to="/NavBar">Navigation Bar</Link>
       <Link to="/NewPlayerForm">New Player Form</Link>

@@ -1,7 +1,7 @@
 export default function NewPlayerForm() {
     return (
       <div className="newplayerform">
-        <h1>New Player Form</h1>
+        <h1>The New Player Form Component</h1>
       </div>
     );
   }

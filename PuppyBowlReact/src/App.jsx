@@ -13,8 +13,8 @@ function App() {
     <>
 <div id="main-section">
   <Routes>
-      <Route path="/NavBar" element={<NavBar />} /> 
       <Route path="/AllPlayers" element={<AllPlayers />} />   
+      <Route path="/NavBar" element={<NavBar />} /> 
       <Route path="/NewPlayerForm" element={<NewPlayerForm />} /> 
       <Route path="/SinglePlayer'" element={<SinglePlayer />} /> 
   </Routes>

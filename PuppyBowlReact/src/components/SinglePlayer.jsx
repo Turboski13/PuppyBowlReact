@@ -1,7 +1,7 @@
 export default function SinglePlayer() {
     return (
       <div className="singleplayer">
-        <h1>Single Players</h1>
+        <h1>The Single Players Component</h1>
       </div>
     );
   }
