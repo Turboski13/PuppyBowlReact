@@ -1,30 +1,9 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import fetchAllPlayersAPI from '../api/index.js'
+import fetchAllPlayersAPI from '../api/index'
 
-const fetchAllPlayersAPI = async () => {
-  try {
-    const response = await fetch(`${API_URL}/players`);
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-
-    const json = await response.json();
-    state.players = json.data.players;
-    return state.players;
-  } catch (err) {
-    console.error("Uh oh, trouble fetching players!", err);
-    return []; // Return an empty array on error to maintain consistency.
-  }
-};
-export default fetchAllPlayersAPI;
-
-
-
-
-export default function AllPlayers() {
-  const [players, setPlayers] = useState([0]) 
+const AllPlayers = () => {
+  const [players, setPlayers] = useState([]) 
   const navigate = useNavigate();
   
   useEffect(() => {
@@ -37,9 +16,21 @@ export default function AllPlayers() {
 
   
   return (
-      <div className="allplayers">
-        <h1>The All Players Component</h1>
-      </div>
+    <div>
+    {
+        players.map((player)=>{
+            return (
+                <div>
+                    <h4>{player.name}</h4>
+                    <h4>{player.breed}</h4>
+                    <h4>{player.status}</h4>
+                    <h4>{player.teamID}</h4>
+                    <img src={player.imageUrl} alt="{player.name}" />
+                </div>
+            )
+        })
+    }
+</div>
     );
   }
 
@@ -66,5 +57,5 @@ const renderAllPlayers = async () => {
 
 
 
-
+export default AllPlayers
 

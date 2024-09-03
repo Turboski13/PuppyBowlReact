@@ -9,9 +9,12 @@ import './App.css'
 function App() {
   
   return (
-    <>
-<div id="main-section">
-
+    <div>
+    <h1>Welcome To Puppy Bowl</h1>
+      <NavBar />
+      <div id="main-section">
+      <h1>Welcome To Puppy Bowl</h1>
+   <BrowserRouter>        
   <Routes>
     <Route path="/NavBar" element={<NavBar />} /> 
       <Route path="/AllPlayers" element={<AllPlayers />} />   
@@ -19,9 +22,10 @@ function App() {
       <Route path="/NewPlayerForm" element={<NewPlayerForm />} /> 
       <Route path="/SinglePlayer'" element={<SinglePlayer />} /> 
   </Routes>
+  </BrowserRouter>
 </div>
-    </>
-  )
+    </div>
+  );
 }
 
 export default App
