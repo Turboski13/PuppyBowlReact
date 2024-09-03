@@ -2,6 +2,27 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import fetchAllPlayersAPI from '../api/index.js'
 
+const fetchAllPlayersAPI = async () => {
+  try {
+    const response = await fetch(`${API_URL}/players`);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const json = await response.json();
+    state.players = json.data.players;
+    return state.players;
+  } catch (err) {
+    console.error("Uh oh, trouble fetching players!", err);
+    return []; // Return an empty array on error to maintain consistency.
+  }
+};
+export default fetchAllPlayersAPI;
+
+
+
+
 export default function AllPlayers() {
   const [players, setPlayers] = useState([0]) 
   const navigate = useNavigate();
@@ -23,7 +44,6 @@ export default function AllPlayers() {
   }
 
 
-
 //render players using async
 const renderAllPlayers = async () => {
   const playersList = document.getElementById("playerList");
@@ -42,25 +62,6 @@ const renderAllPlayers = async () => {
     </li>
   `).join('');
 
-//button to display single player
-  playersList.querySelectorAll('.see-details').forEach(button => {
-    button.addEventListener('click', async (e) => {
-      const playerId = parseInt(e.target.getAttribute('data-id'), 10);
-      await renderSinglePlayer(playerId);
-    });
-  });
-//button to delete a player
-  playersList.querySelectorAll('.remove-player').forEach(button => {
-    button.addEventListener('click', async (e) => {
-      const playerId = parseInt(e.target.getAttribute('data-id'), 10);
-      await removePlayer(playerId);
-
-      state.players = await fetchAllPlayers();
-      renderAllPlayers();
-    });
-  });
-
-  console.log(playerList)
 };
 
 
