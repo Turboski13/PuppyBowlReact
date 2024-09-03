@@ -66,81 +66,124 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-/* Apply a background image to the entire body of the document. */
+body,
+h1,
+h2,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Basic styling */
 body {
-  background-image: url("./concrete.jpg"); /* The image used as a background. */
-  background-repeat: no-repeat; /* The background image will not repeat. */
-  background-attachment: fixed; /* The background image will not scroll with the page. */
-  background-size: cover; /* The background image will cover the entire area of the element. */
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #9ec4eb;
 }
 
-/* Styling for the introduction text of the application. */
-.intro {
-  text-align: center; /* The text is centered. */
-  color: #610564; /* The color of the text. */
-  font-size: 24px; /* The size of the text. */
-  padding: 24px; /* The padding around the text. */
-  margin-left: 21px; /* The margin to the left of the text. */
-  padding-right: 100px; /* The padding to the right of the text. */
-  padding-left: 100px; /* The padding to the left of the text. */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-/* Styling for the container that holds the player cards. */
-.players {
-   /* The player cards are displayed using flexbox. */
- /* The player cards will wrap onto the next line if there is not enough space. */
- /* The player cards are centered on the line. */
- display: inline-flex;
- flex-wrap: wrap;
- justify-content: center;
+h1,
+h2 {
+  color: #007bff;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-/* Styling for individual player cards. */
-.player-card {
-  width: 360px; /* The width of the card. */
-  height: 380px; /* The height of the card. */
-  margin: 10px; /* The margin around the card. */
-   /* The background color of the card. */
-/* The border around the card. */
- /* The radius of the card's corners. */
-   /* The shadow effect around the card. */
-  overflow: hidden; /* Any content that goes outside the card will be hidden. */
-  position: relative; /* The card's position is set to relative so it can be moved using the transform property. */
-  transition: transform 0.3s; /* Transition effect for the transform property. */
+#playerList {
+  list-style-type: none;
+  padding: 0;
 }
 
-/* Styling for when a user hovers over a player card. */
-.player-card:hover {
-  /* The card moves up 5 pixels when hovered over. */
-  top: -5px;
+#playerList li {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-/* Styling for the container that holds the player's image. */
-.player-image-container {
- /* The image is centered. */
- /* The image is centered along the horizontal axis. */
-  /* The image is centered along the vertical axis. */
-  height: 300px; /* The height of the image container. */
-  padding: 10px; /* The padding around the image. */
-  
+#playerList img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
-/* Styling for the player's image. */
-.player-image {
-  width: 250px; /* The width of the image. */
-  height: 250px; /* The height of the image. */
-  /* The image will cover the entire area of its container without distorting its aspect ratio. */
-  /* The image is displayed using CSS Grid. */
- /* The margin to the left of the image. */
- 
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
-/* Styling for the player's details (name, breed, status). */
-.player-details {
-  flex-direction: column; /* The details are arranged in a column. */
-  align-items: center; /* The details are centered along the vertical axis. */
-  justify-content: center; /* The details are centered along the horizontal axis. */
-  color: #000; /* The color of the details text. */
-  font-size: 16px; /* The size of the details text. */
-  text-align: center; /* The details text is centered. */
+button:hover {
+  background-color: #0056b3;
+}
+
+button:focus {
+  outline: none;
+}
+
+#new-player-section {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+#new-player-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#new-player-form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#new-player-form input[type="text"],
+#new-player-form input[type="url"] {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+#new-player-form button {
+  width: 100%;
+  background-color: #28a745;
+}
+
+#new-player-form button:hover {
+  background-color: #218838;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+  #playerList li {
+    flex-direction: column;
+  }
+
+  #new-player-form input[type="text"],
+  #new-player-form input[type="url"] {
+    font-size: 16px;
+  }
 }

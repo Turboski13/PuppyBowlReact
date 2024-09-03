@@ -10,13 +10,13 @@ function App() {
   
   return (
     <div>
-    <h1>Welcome To Puppy Bowl</h1>
-      <NavBar />
+          <NavBar />
       <div id="main-section">
       <h1>Welcome To Puppy Bowl</h1>
       <h2>Come and join us for a fun filled day full of adorable puppy football!<br></br>
       Get ready to meet the talented pups competing in this year's Puppy Bowl!!</h2>
       <AllPlayers/>
+      <NewPlayerForm>Enter a new contender!</NewPlayerForm>
    <BrowserRouter>        
   <Routes>
     <Route path="/NavBar" element={<NavBar />} /> 
