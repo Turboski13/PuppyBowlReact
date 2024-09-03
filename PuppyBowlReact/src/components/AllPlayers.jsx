@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import fetchAllPlayersAPI from '../api/index'
+import PuppyBowlApi from '../api/index'
 
 const AllPlayers = () => {
   const [players, setPlayers] = useState([]) 
@@ -8,7 +8,7 @@ const AllPlayers = () => {
   
   useEffect(() => {
     const fetchPlayers = async () => {
-      const playersData = await fetchAllPlayersAPI();
+      const playersData = await PuppyBowlApi();
       setPlayers(playersData);
   };
   fetchPlayers();
